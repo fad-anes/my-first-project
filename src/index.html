@@ -7,10 +7,29 @@
   
 <body>
 
-<div ng-app="">
-  <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
-</div>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+      First Name: <input type="text" ng-model="firstName"><br>
+      Last Name: <input type="text" ng-model="lastName"><br>
+      day: <input type="text" ng-model="day">
+      month: <input type="text" ng-model="month">
+      year: <input type="text" ng-model="year">
+      <br>
+      Full Name: {{firstName + " " + lastName}}<br>
+      Age:{{2023 -year+23 -day+1 -month}}
+      </div>
+      
+      <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+        $scope.firstName= "";
+        $scope.lastName= "";
+        $scope.year= "";
+        $scope.month= "";
+        $scope.day= "";
+      });
+      </script>
+    
 
 </body>
 </html>
